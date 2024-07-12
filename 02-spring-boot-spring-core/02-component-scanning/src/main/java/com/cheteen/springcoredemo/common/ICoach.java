@@ -1,4 +1,4 @@
-package com.cheteen.springcoredemo;
+package com.cheteen.springcoredemo.common;
 
 public interface ICoach {
 
