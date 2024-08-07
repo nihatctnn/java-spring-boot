@@ -1,10 +1,10 @@
-package com.cheteen.cruddemo.dao;
+package com.cheteen.cruddemo.service;
 
 import com.cheteen.cruddemo.entity.Employee;
 
 import java.util.List;
 
-public interface IEmployeeDAO {
+public interface IEmployeeService {
 
     List<Employee> findAll();
 
@@ -13,5 +13,7 @@ public interface IEmployeeDAO {
     Employee save(Employee theEmployee);
 
     void deleteById(int theId);
+
+
 
 }
