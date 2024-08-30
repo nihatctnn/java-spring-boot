@@ -21,6 +21,11 @@
             <i class="failed">Sorry! You entered invalid username/password.</i>
         </div>
 
+
+        <div th:if="${param.logout}">
+            <i>You have been logged out.</i>
+        </div>
+
         <p>
             User name: <input type="text" name="username" />
         </p>
