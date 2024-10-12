@@ -20,10 +20,28 @@ public class CruddemoApplication {
 		return runner -> {
 			//createInstructor(appDAO);
 			//findInstructor(appDAO);
-			
-			deleteInstructor(appDAO);
-			
+			//deleteInstructor(appDAO);
+			//findInstructorDetail(appDAO);
+			deleteInstructorDetail(appDAO);
 		};
+	}
+
+	private void deleteInstructorDetail(AppDAO appDAO) {
+		int theId = 3;
+		System.out.println("Deleting instructor detail id : " + theId);
+		appDAO.deleteInstructorDetailById(theId);
+		System.out.println("Deleted :)");
+	}
+
+	private void findInstructorDetail(AppDAO appDAO) {
+		int theId= 1;
+		InstructorDetail tempInstructorDetail = appDAO.findInstructorDetailById(theId);
+
+		System.out.println("tempInstrcutorDetail: " + tempInstructorDetail);
+
+		System.out.println("the associated instructor: " + tempInstructorDetail.getInstructor());
+
+		System.out.println("Done :)");
 	}
 
 	private void deleteInstructor(AppDAO appDAO) {
@@ -48,24 +66,24 @@ public class CruddemoApplication {
 
 	private void createInstructor(AppDAO appDAO) {
 
-//		Instructor tempInstructor = new Instructor("Nihat",
-//				                                   "Çetin",
-//				                                   "nihatcetin0143@gmail.com");
-//
-//		InstructorDetail tempInstructorDetail = new InstructorDetail(
-//				"https://www.youtube.com/",
-//				"reading a book"
-//		);
-
-
-		Instructor tempInstructor = new Instructor("Abdurrahman",
-				"Seyda",
-				"abdurrahmanseyda@gmail.com");
+		Instructor tempInstructor = new Instructor("Nihat",
+				                                   "Çetin",
+				                                   "nihatcetin0143@gmail.com");
 
 		InstructorDetail tempInstructorDetail = new InstructorDetail(
 				"https://www.youtube.com/",
-				"meeting with friends"
+				"reading a book"
 		);
+
+
+//		Instructor tempInstructor = new Instructor("Abdurrahman",
+//				"Seyda",
+//				"abdurrahmanseyda@gmail.com");
+//
+//		InstructorDetail tempInstructorDetail = new InstructorDetail(
+//				"https://www.youtube.com/",
+//				"meeting with friends"
+//		);
 		
 		tempInstructor.setInstructorDetail(tempInstructorDetail);
 
