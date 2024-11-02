@@ -1,6 +1,7 @@
 package com.cheteen.cruddemo;
 
 import com.cheteen.cruddemo.dao.AppDAO;
+import com.cheteen.cruddemo.entity.Course;
 import com.cheteen.cruddemo.entity.Instructor;
 import com.cheteen.cruddemo.entity.InstructorDetail;
 import org.springframework.boot.CommandLineRunner;
@@ -39,6 +40,17 @@ public class CruddemoApplication {
 		);
 
 		tempInstructor.setInstructorDetail(tempInstructorDetail);
+
+		Course tempCourse1 = new Course("Air guitar - the ultimate guide");
+		Course tempCourse2 = new Course("The Pinball Masterclass");
+
+		tempInstructor.add(tempCourse1);
+		tempInstructor.add(tempCourse2);
+
+		System.out.println("Saving instructor: " + tempInstructor);
+		System.out.println("The Courses: " + tempInstructor.getCourses());
+		appDAO.save(tempInstructor);
+		System.out.println("Done!");
 
 	}
 
