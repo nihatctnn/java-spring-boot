@@ -1,7 +1,10 @@
 package com.cheteen.cruddemo.dao;
 
+import com.cheteen.cruddemo.entity.Course;
 import com.cheteen.cruddemo.entity.Instructor;
 import com.cheteen.cruddemo.entity.InstructorDetail;
+
+import java.util.List;
 
 public interface AppDAO {
 
@@ -14,5 +17,15 @@ public interface AppDAO {
     InstructorDetail findInstructorDetailById(int theId);
 
     void deleteInstructorDetailById(int theId);
+
+    List<Course> findCoursesByInstructorId(int theId);
+
+    Instructor findInstructorByIdJoinFetch(int theId);
+
+    void update(Instructor tempInstructor);
+
+    void update(Course tempCourse);
+
+    Course findCourseById(int theId);
 
 }
